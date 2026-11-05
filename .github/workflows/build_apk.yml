@@ -16,11 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Java 17
+      - name: Set up Latest Java 21 LTS
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
@@ -31,7 +31,7 @@ jobs:
       - name: Get Dependencies
         run: flutter pub get
 
-      - name: Build arm64-v8a APK (Supported modern binaries only)
+      - name: Build arm64-v8a APK with Java 21 & Android 15 (SDK 35)
         run: flutter build apk --release --target-platform android-arm64 --split-per-abi --android-skip-build-dependency-validation
 
       - name: Rename & Prepare APK Artifact
