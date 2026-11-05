@@ -56,7 +56,7 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(color: onSurface),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: surfaceContainer,
         elevation: 0,
         margin: EdgeInsets.zero,
