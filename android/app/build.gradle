@@ -31,9 +31,18 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'upload'
+            keyPassword 'android123'
+            storeFile file('upload-keystore.jks')
+            storePassword 'android123'
+        }
+    }
+
     buildTypes {
         release {
-            signingConfig = signingConfigs.debug
+            signingConfig = signingConfigs.release
             minifyEnabled = false
             shrinkResources = false
         }
